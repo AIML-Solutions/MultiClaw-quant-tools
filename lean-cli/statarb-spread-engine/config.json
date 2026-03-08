@@ -1,0 +1,19 @@
+{
+    "algorithm-language": "Python",
+    "parameters": {
+        "start_year": "2018",
+        "end_year": "2025",
+        "initial_cash": "100000",
+        "lookback": "90",
+        "entry_z": "2.0",
+        "exit_z": "0.35",
+        "stop_z": "3.6",
+        "max_active_pairs": "2",
+        "pair_risk_pct": "0.06",
+        "cooldown_days": "2"
+    },
+    "description": "Multi-pair statistical arbitrage with rolling OLS hedge ratio and z-score mean-reversion engine",
+    "cloud-id": 28751139,
+    "organization-id": "1355094dcd45dec9873677abd63c293c",
+    "local-id": 140256453
+}

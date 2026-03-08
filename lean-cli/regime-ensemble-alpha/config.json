@@ -1,0 +1,19 @@
+{
+    "algorithm-language": "Python",
+    "parameters": {
+        "start_year": "2018",
+        "end_year": "2025",
+        "initial_cash": "100000",
+        "include_crypto": "true",
+        "top_n": "6",
+        "max_weight": "0.18",
+        "rebalance_days": "1",
+        "max_drawdown": "0.10",
+        "mom_fast_weight": "0.35",
+        "mom_slow_weight": "0.65"
+    },
+    "description": "Regime-aware multi-factor ensemble allocator with momentum, stretch penalty, volatility scaling, and drawdown circuit breaker",
+    "cloud-id": 28751123,
+    "organization-id": "1355094dcd45dec9873677abd63c293c",
+    "local-id": 397611202
+}

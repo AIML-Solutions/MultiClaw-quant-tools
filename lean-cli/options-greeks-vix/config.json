@@ -1,0 +1,20 @@
+{
+    "algorithm-language": "Python",
+    "parameters": {
+        "start_year": "2021",
+        "end_year": "2025",
+        "target_delta": "0.30",
+        "min_dte": "10",
+        "max_dte": "30",
+        "max_contracts": "1",
+        "cooldown_days": "4",
+        "take_profit": "0.25",
+        "stop_loss": "-0.18",
+        "min_option_price": "0.40",
+        "max_alloc_pct": "0.02"
+    },
+    "description": "SPY options greeks lane with VIXY regime filter and risk-gated entries",
+    "cloud-id": 28748744,
+    "organization-id": "1355094dcd45dec9873677abd63c293c",
+    "local-id": 942200924
+}
