@@ -122,12 +122,14 @@ def main():
         "orders": normalize_orders(orders),
     }
 
-    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
-        json.dump(payload, f)
-        tmp = f.name
+    tmp = None
+    try:
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(payload, f)
+            tmp = f.name
 
-    ingest_py = os.path.join(os.path.dirname(__file__), "ingest_broker_snapshot.py")
-    cmd = [
+        ingest_py = os.path.join(os.path.dirname(__file__), "ingest_broker_snapshot.py")
+        cmd = [
         "python3",
         ingest_py,
         "--provider",
@@ -140,10 +142,14 @@ def main():
         tmp,
         "--db-url",
         DATABASE_URL,
-    ]
-    subprocess.run(cmd, check=True)
-    print("Tradier paper pull+ingest complete")
+        ]
+        subprocess.run(cmd, check=True)
+        print("Tradier paper pull+ingest complete")
 
+
+    finally:
+        if tmp and os.path.exists(tmp):
+            os.unlink(tmp)
 
 if __name__ == "__main__":
     main()

@@ -26,4 +26,11 @@ else
   echo "Skipping Tradier ingestor (missing token var)"
 fi
 
+if curl -sk https://localhost:5001/v1/api/iserver/auth/status | grep -q '"authenticated":true'; then
+  echo "Running IBKR ingestor..."
+  python3 pull_ibkr_gateway.py || echo "IBKR ingestor failed"
+else
+  echo "Skipping IBKR ingestor (gateway not authenticated)"
+fi
+
 echo "Ingestor cycle complete"
